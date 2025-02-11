@@ -6,6 +6,7 @@ from faker import Faker
 from confluent_kafka import Producer
 
 from data_generation import generate_email, generate_phone_number
+from data_validation import validate_customer
 import settings
 
 
