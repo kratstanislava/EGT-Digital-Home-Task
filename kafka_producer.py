@@ -5,15 +5,13 @@ import logging
 from faker import Faker
 from confluent_kafka import Producer
 
-from data_generation import generate_email, generate_phone_number
-from data_validation import validate_customer
+from utilities import generate_email, generate_phone_number, validate_customer
 import settings
 
 
 fake = Faker(['en_GB'])
 
 logging.basicConfig(
-    filename="kafka_producer.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )

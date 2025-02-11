@@ -2,6 +2,8 @@ import random
 import psycopg2
 from faker import Faker
 from decimal import Decimal
+
+from utilities import generate_email, generate_phone_number
 import settings
 
 
@@ -15,13 +17,6 @@ conn = psycopg2.connect(
     port=settings.DB_PORT
 )
 cursor = conn.cursor()
-
-
-def generate_email(first_name, last_name):
-    return f"{first_name.lower()}.{last_name.lower()}@example.com"
-
-def generate_phone_number():
-    return f"+{random.randint(100, 999)} {random.randint(10, 99)} {random.randint(100, 999)} {random.randint(10, 99)} {random.randint(10, 99)}"
 
 
 def insert_customers(n=10):
