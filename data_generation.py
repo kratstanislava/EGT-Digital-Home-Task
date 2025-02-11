@@ -8,7 +8,7 @@ import settings
 fake = Faker(['en_GB'])
 
 conn = psycopg2.connect(
-    dbname='ecommerce',
+    dbname=settings.DB_NAME,
     user=settings.DB_USER,
     password=settings.DB_PASSWORD,
     host=settings.DB_HOST,
